@@ -1,52 +1,62 @@
-#  Store Sales Time Series Forecasting
+# Store Sales Time Series Forecasting
 
-Este proyecto nace como desafío inspirado en el **Kaggle Competition: Store Sales - Time Series Forecasting**.  
-El objetivo: **predecir las ventas de una cadena de supermercados en Ecuador**, combinando factores como calendario, feriados, precio del petróleo y estacionalidad de las series temporales.
+This project was created as a challenge inspired by the **Kaggle Competition: Store Sales - Time Series Forecasting**.  
+The objective: **to predict the sales of a supermarket chain in Ecuador**, combining factors such as calendar data, holidays, oil prices, and time series seasonality.
 
-##  Motivación
-Las ventas de retail no solo dependen de la demanda natural, sino también de variables externas (feriados, promociones, eventos globales).  
-Este proyecto busca capturar esos patrones y construir un modelo robusto que pueda anticipar las ventas con mayor precisión.
+---
 
-##  Etapas del Proyecto
-1. **Carga y preparación de datos**  
-   - Conversión de fechas a `datetime`.  
-   - Integración de datasets: feriados, petróleo y ventas.  
+## Motivation
+Retail sales depend not only on natural demand but also on external variables such as holidays, promotions, and global events.  
+This project aims to capture these patterns and build a robust model capable of forecasting sales with greater accuracy.
+
+---
+
+## Project Stages
+
+1. **Data Loading and Preparation**  
+   - Conversion of dates to `datetime`.  
+   - Integration of datasets: holidays, oil prices, and sales.  
 
 2. **Feature Engineering**  
-   - Creación de variables de calendario (día, mes, año, día de la semana).  
-   - Incorporación de feriados con variables dummy.  
-   - Medias móviles sobre el precio del petróleo para capturar tendencias.  
+   - Creation of calendar-based features (day, month, year, day of the week).  
+   - Inclusion of holidays using dummy variables.  
+   - Moving averages on oil prices to capture trends.  
 
 3. **Exploratory Data Analysis (EDA)**  
-   - Visualización de ventas vs precio del petróleo.  
-   - Análisis de estacionalidad y tendencias.  
+   - Visualization of sales vs oil price.  
+   - Analysis of seasonality and trends.  
 
-4. **Modelado**  
-   - **XGBoost** y **LightGBM** como modelos principales.  
-   - One-hot encoding en variables categóricas (`family`).  
+4. **Modeling**  
+   - **XGBoost** and **LightGBM** as main models.  
+   - One-hot encoding applied to categorical variables (`family`).  
 
-5. **Evaluación**  
-   - Métricas: RMSE, MAPE, R² ajustado y NWRMSLE (métrica oficial de Kaggle).  
-   - Comparación de predicciones vs valores reales.  
+5. **Evaluation**  
+   - Metrics: RMSE, MAPE, Adjusted R², and NWRMSLE (official Kaggle metric).  
+   - Comparison between predicted and actual values.  
 
-6. **Optimización**  
-   - GridSearch para ajustar hiperparámetros en XGBoost.  
-   - Validación cruzada para robustez.  
+6. **Optimization**  
+   - GridSearch for XGBoost hyperparameter tuning.  
+   - Cross-validation for robustness.  
 
-##  Resultados
-- Los modelos lograron capturar patrones estacionales clave.  
-- Se observó correlación interesante entre ventas y precio del petróleo y estacionalidades.  
-- LightGBM ofreció mejor eficiencia de entrenamiento, mientras que XGBoost mostró métricas competitivas tras tuning.  
+---
 
-##  Conclusiones
-El proyecto confirma que:  
-- El **feature engineering** en series temporales (feriados, precios externos, variables de calendario) marca la diferencia.  
-- Modelos de gradient boosting (XGBoost/LightGBM) son especialmente poderosos en escenarios con múltiples variables externas.  
+## Results
+- The models successfully captured key seasonal patterns.  
+- A meaningful correlation was observed between sales, oil prices, and seasonality.  
+- LightGBM provided better training efficiency, while XGBoost showed competitive performance after tuning.  
 
-## 🛠️ Tecnologías usadas
+---
+
+## Conclusions
+The project confirms that:  
+- **Feature engineering** in time series (holidays, external prices, calendar variables) makes a significant difference.  
+- Gradient boosting models (XGBoost/LightGBM) are particularly powerful in scenarios with multiple external variables.  
+
+---
+
+## Technologies Used
 - Python, Pandas, NumPy  
 - Matplotlib, Seaborn  
 - XGBoost, LightGBM  
-- Scikit-learn  
+- Scikit-learn
 
----
